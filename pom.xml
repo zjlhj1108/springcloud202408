@@ -31,12 +31,14 @@
         <lombok.version>1.8.30</lombok.version>
         <!--swagger3版本-->
         <swagger3.version>2.6.0</swagger3.version>
+        <!--mybatis和springboot整合的版本-->
+        <mybatis.springboot.version>3.0.2</mybatis.springboot.version>
         <!--fastjson版本-->
         <fastjson2.version>2.0.51</fastjson2.version>
         <!--javax persistence java对象映射到数据库 版本-->
         <persistence-api.version>2.2</persistence-api.version>
         <!--boot版本-->
-        <spring.boot.version>3.2.7</spring.boot.version>
+        <spring.boot.version>3.2.8</spring.boot.version>
         <!--cloud版本-->
         <spring.cloud.version>2023.0.3</spring.cloud.version>
         <!--阿里巴巴版本-->
@@ -70,6 +72,14 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.mybatis.spring.boot/mybatis-spring-boot-starter -->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis.springboot.version}</version>
+            </dependency>
+
 
             <!-- https://mvnrepository.com/artifact/cn.hutool/hutool-all -->
             <dependency>

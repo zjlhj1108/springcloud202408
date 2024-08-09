@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: payment-service
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name} #服务发现consul上显示的名称
+      config:
+        prefixes: application #第一层目标文件夹名称
+        profile-separator: '-' #文件名的分割符
+        format: YAML  #文件格式
+        watch:
+          wait-time: 10 #多少秒以后到consul配置中心去拉取最新配置 默认55秒
+
