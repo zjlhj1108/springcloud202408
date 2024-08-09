@@ -1,0 +1,21 @@
+server:
+  port: 8818
+spring:
+  application:
+    name: payment-service
+  datasource:
+    druid:
+      url: ${jdbc.url}
+      password: ${jdbc.password}
+      username: ${jdbc.username}
+      driver-class-name: ${jdbc.driver}
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
+mybatis-plus:
+  mapper-locations: classpath:mapper/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
