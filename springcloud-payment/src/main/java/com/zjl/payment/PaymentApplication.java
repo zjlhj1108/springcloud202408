@@ -9,7 +9,7 @@ import tk.mybatis.spring.annotation.MapperScan;
 
 @MapperScan(basePackages = {"com.zjl.cloud.mapper"})
 @RefreshScope
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"com.zjl"})
 @EnableDiscoveryClient
 public class PaymentApplication {
     public static void main(String[] args) {

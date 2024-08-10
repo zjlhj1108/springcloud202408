@@ -1,5 +1,9 @@
 package com.zjl.cloud.domain;
 
+import cn.hutool.db.Page;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import io.swagger.v3.oas.annotations.media.Schema;
+
 import java.math.BigDecimal;
 import java.util.Date;
 import javax.persistence.*;
@@ -8,8 +12,10 @@ import javax.persistence.*;
  * 表名：t_pay
  * 表注释：支付交易表
 */
+@Schema(title = "支付订单的实体")
 @Table(name = "t_pay")
 public class Pay {
+    @Schema(title = "主键")
     @Id
     @GeneratedValue(generator = "JDBC")
     private Integer id;
@@ -17,46 +23,56 @@ public class Pay {
     /**
      * 支付流水号
      */
+    @Schema(title = "支付流水号")
     @Column(name = "pay_no")
     private String payNo;
 
     /**
      * 订单流水号
      */
+    @Schema(title = "订单流水号")
     @Column(name = "order_no")
     private String orderNo;
 
     /**
      * 用户账号ID
      */
+    @Schema(title = "用户账号ID")
     @Column(name = "user_id")
     private Integer userId;
 
     /**
      * 交易金额
      */
+    @Schema(title = "交易金额")
     private BigDecimal amount;
 
     /**
      * 删除标志，默认0不删除，1删除
      */
+    @Schema(title = "删除标志，默认0不删除，1删除")
     private Byte deleted;
 
     /**
      * 创建时间
      */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @Schema(title = "创建时间")
     @Column(name = "create_time")
     private Date createTime;
 
     /**
      * 更新时间
      */
+    @JsonFormat(pattern = "yyy-MM-dd HH:mm:ss")
+    @Schema(title = "更新时间")
     @Column(name = "update_time")
     private Date updateTime;
 
     /**
      * @return id
      */
+
     public Integer getId() {
         return id;
     }

@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Schema(title = "更新订单的实体")
+@Schema(title = "支付订单的实体传值实体")
 public class PayDTO implements Serializable
 {
     @Schema(title = "订单实体的id")
