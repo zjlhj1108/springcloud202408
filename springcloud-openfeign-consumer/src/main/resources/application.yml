@@ -1,0 +1,22 @@
+server:
+  port: 8878
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://123.207.53.55:3306/cloud
+    password: Root1234@
+    username: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  profiles:
+    active: dev
+
+logging:
+  level:
+    com.zjl.cloud: debug
+
+mybatis-plus:
+  type-aliases-package: com.zjl.cloud.domain
+  mapper-locations: classpath*:/mapper/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true

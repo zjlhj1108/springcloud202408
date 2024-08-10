@@ -7,17 +7,19 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.annotation.Resource;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
+@Slf4j
 @Tag(name="订单支付接口",description = "订单支付的api")
 @RestController
 public class PaymentController {
     @Resource
     private PaymentService paymentService;
 
+    @Value("${server.port}")
+    private String port;
     /**
      * 根据id查询支付流水订单
      * @param id
@@ -27,6 +29,7 @@ public class PaymentController {
     @Operation(summary = "订单查询接口",description = "根据id查询订单")
     @GetMapping("/pay/get/{id}")
     public ResultData selectById(@PathVariable("id")Integer id){
+        log.info("访问的端口号是：{}",port);
         return paymentService.getOne(id);
     }
 
@@ -38,6 +41,7 @@ public class PaymentController {
     @Operation(summary = "新增订单接口",description = "新增订单，参数是订单数据，json数据格式")
     @PostMapping("/pay/add")
     public ResultData insert(@RequestBody PayDTO payDTO){
+        log.info("访问的端口号是：{}",port);
         return paymentService.addPay(payDTO);
     }
 
@@ -49,6 +53,7 @@ public class PaymentController {
     @Operation(summary = "更新订单接口",description = "更新订单，参数是订单数据，json数据格式")
     @PutMapping("/pay/update")
     public ResultData update(@RequestBody PayDTO payDTO){
+        log.info("访问的端口号是：{}",port);
         return paymentService.update(payDTO);
     }
 
@@ -60,6 +65,7 @@ public class PaymentController {
     @Operation(summary = "删除订单接口",description = "删除订单，参数是订单的id")
     @DeleteMapping("/pay/delete/{id}")
     public ResultData delete(@PathVariable("id") @Parameter(name = "订单id") Integer id){
+        log.info("访问的端口号是：{}",port);
         return paymentService.delete(id);
     }
 
@@ -70,6 +76,7 @@ public class PaymentController {
     @Operation(summary = "查询订单接口",description = "查询所有订单")
     @GetMapping("/pay/selectAll")
     public ResultData selectAll(){
+        log.info("访问的端口号是：{}",port);
         return paymentService.selectAll();
     }
 
@@ -82,6 +89,7 @@ public class PaymentController {
     //这里遇到的一个配置刷新的坑，就是每次要去调用这个@value.可以观察到变化
     @GetMapping("/pay/info")
     public String getConsulConfig(@Value("${com}")String info){
+        log.info("访问的端口号是：{}",port);
         return info+System.currentTimeMillis();
     }
 

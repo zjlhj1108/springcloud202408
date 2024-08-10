@@ -12,6 +12,7 @@
         <module>springcloud-commons-api</module>
         <module>springcloud-payment</module>
         <module>springcloud-consumer</module>
+        <module>springcloud-openfeign-consumer</module>
     </modules>
 
     <properties>
