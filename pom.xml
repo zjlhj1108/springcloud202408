@@ -11,6 +11,7 @@
     <modules>
         <module>springcloud-commons-api</module>
         <module>springcloud-payment</module>
+        <module>springcloud-consumer</module>
     </modules>
 
     <properties>

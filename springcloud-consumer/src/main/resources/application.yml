@@ -1,0 +1,27 @@
+server:
+  port: 8888
+
+#数据库的配置
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: root
+    password: Root1234@
+    url: jdbc:mysql://123.207.53.55:3306/cloud
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  profiles:
+    active: dev #激活开发环境
+
+
+
+#mybatis-plus的配置
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath*:mapper/**/*.xml
+  type-aliases-package: com.zjl.cloud.domain
+#配置一下日志
+logging:
+  level:
+    com.zjl.cloud: debug

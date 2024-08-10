@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: orderService
+
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name} #服务的名称
+      config:
+        prefixes: application #基本目录
+        format: yaml #文件名称
+        profile-separator: '-' #配置文件的分隔符
+        watch:
+          wait-time: 10 #发现配置改变，多久去同步

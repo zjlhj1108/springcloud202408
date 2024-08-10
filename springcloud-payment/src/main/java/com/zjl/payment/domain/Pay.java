@@ -1,12 +1,14 @@
-package com.zjl.cloud.domain;
+package com.zjl.payment.domain;
 
-import cn.hutool.db.Page;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.v3.oas.annotations.media.Schema;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.math.BigDecimal;
 import java.util.Date;
-import javax.persistence.*;
 
 /**
  * 表名：t_pay

@@ -1,9 +1,11 @@
 package com.zjl.payment.service.impl;
 
-import com.zjl.cloud.domain.Pay;
-import com.zjl.cloud.mapper.PayMapper;
+
+import com.zjl.cloud.dto.PayDTO;
 import com.zjl.cloud.result.ResultData;
-import com.zjl.payment.dto.PayDTO;
+
+import com.zjl.payment.domain.Pay;
+import com.zjl.payment.mapper.PayMapper;
 import com.zjl.payment.service.PaymentService;
 import jakarta.annotation.Resource;
 import org.springframework.beans.BeanUtils;

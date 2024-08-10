@@ -1,12 +1,10 @@
-package com.zjl.payment.config;
-
-import io.swagger.v3.oas.models.OpenAPI;
-import org.springdoc.core.models.GroupedOpenApi;
-import org.springframework.context.annotation.Bean;
-
+package com.zjl.cloud.config;
 
 import io.swagger.v3.oas.models.ExternalDocumentation;
+import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
+import org.springdoc.core.models.GroupedOpenApi;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
@@ -22,10 +20,10 @@ public class Swagger3Config {
         return GroupedOpenApi.builder().group("其它微服务模块").pathsToMatch("/other/**", "/others").build();
     }
 
-    /*@Bean
-    public GroupedOpenApi CustomerApi() {
-        return GroupedOpenApi.builder().group("客户微服务模块").pathsToMatch("/customer/**", "/customers").build();
-    }*/
+    @Bean
+    public GroupedOpenApi OrderApi() {
+        return GroupedOpenApi.builder().group("订单服务模块").pathsToMatch("/order/**", "/order").build();
+    }
 
     @Bean
     public OpenAPI docsOpenApi() {

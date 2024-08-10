@@ -1,8 +1,7 @@
 package com.zjl.payment.controller;
 
-import com.zjl.cloud.domain.Pay;
+import com.zjl.cloud.dto.PayDTO;
 import com.zjl.cloud.result.ResultData;
-import com.zjl.payment.dto.PayDTO;
 import com.zjl.payment.service.PaymentService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
