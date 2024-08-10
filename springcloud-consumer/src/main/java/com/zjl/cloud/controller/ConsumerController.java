@@ -87,7 +87,7 @@ public class ConsumerController {
     @Operation(summary = "测试consul的刷新策略",description = "测试consul配置中心的修改刷新策略")
     @DeleteMapping("/consumer/pay/delete/{id}")
     public ResultData deletePay(@PathVariable("id")Integer id){
-        return restTemplate.exchange(url + "/pay/"+id, HttpMethod.DELETE,
+        return restTemplate.exchange(url + "/pay/delete/"+id, HttpMethod.DELETE,
                 null, ResultData.class).getBody();
     }
 
