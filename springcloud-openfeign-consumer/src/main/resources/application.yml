@@ -11,9 +11,27 @@ spring:
   profiles:
     active: dev
 
+  cloud:
+    openfeign:
+      client:
+        config:
+          default: #这个是针对所有的服务。可以
+            read-timeout: 5000 #读取方法的处理时间为5秒。默认是60秒
+            connect-timeout: 5000 #和服务建立连接的时间是1秒，默认2秒 ,建立连接这个没办法演示，这个是内部的代码编写
+      httpclient:
+        hc5:
+          enabled: true
+      compression: #请求响应压缩
+        request:
+          enabled: true #开启请求压缩
+          mime-types: text/xml,application/xml,application/json #压缩的请求类型
+          min-request-size: 2048 #超过多少字节开始压缩
+        response:
+          enabled: true #开启响应压缩
+#feign 开启日志功能
 logging:
   level:
-    com.zjl.cloud: debug
+    com.zjl.cloud.feignclient.OpenFeignCustomerClient: debug
 
 mybatis-plus:
   type-aliases-package: com.zjl.cloud.domain

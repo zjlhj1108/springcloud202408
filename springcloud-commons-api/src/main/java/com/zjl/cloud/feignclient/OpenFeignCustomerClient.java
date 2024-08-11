@@ -1,11 +1,12 @@
 package com.zjl.cloud.feignclient;
 
+import com.zjl.cloud.config.FeignClientPropertiesConfiguration;
 import com.zjl.cloud.dto.PayDTO;
 import com.zjl.cloud.result.ResultData;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
-@FeignClient("payment-service")
+@FeignClient(value = "payment-service",configuration = FeignClientPropertiesConfiguration.class)
 public interface OpenFeignCustomerClient {
     @GetMapping("/pay/selectAll")
     ResultData getAllPay();

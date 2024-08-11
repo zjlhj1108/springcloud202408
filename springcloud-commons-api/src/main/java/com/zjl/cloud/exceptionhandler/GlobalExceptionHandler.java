@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler(RuntimeException.class)
+//    @ExceptionHandler(RuntimeException.class)
     //The reason to be used for the response.
     //Defaults to an empty string which will be ignored. Set the reason to
     //a non-empty value to have it used to send a Servlet container error page.

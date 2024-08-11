@@ -11,6 +11,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.concurrent.TimeUnit;
+
 @Slf4j
 @Tag(name="订单支付接口",description = "订单支付的api")
 @RestController
@@ -30,6 +32,7 @@ public class PaymentController {
     @GetMapping("/pay/get/{id}")
     public ResultData selectById(@PathVariable("id")Integer id){
         log.info("访问的端口号是：{}",port);
+        try {TimeUnit.SECONDS.sleep(10);} catch (InterruptedException e) {throw new RuntimeException(e);}
         return paymentService.getOne(id);
     }
 
